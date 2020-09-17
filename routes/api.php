@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('singers', 'Api\SingerController@index');
+Route::get('singers/{id}', 'Api\SingerController@getSinger');
+Route::post('singers', 'Api\SingerController@createSinger');
+Route::put('singer/{id}', 'Api\SingerController@updateSinger');
+Route::delete('singer/{id}', 'Api\SingerController@deleteSinger');
