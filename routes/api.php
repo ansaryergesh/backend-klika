@@ -29,3 +29,6 @@ Route::get('genres/{id}', 'Api\GenreController@getGenre');
 Route::post('genres', 'Api\GenreController@createGenre');
 Route::put('genres/{id}', 'Api\GenreController@updateGenre');
 Route::delete('genres/{id}', 'Api\GenreController@deleteGenre');
+
+Route::get('musics', 'Api\MusicController@index');
+Route::post('musics', 'Api\MusicController@createMusic');

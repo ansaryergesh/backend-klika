@@ -11,4 +11,8 @@ class Music extends Model
     public function singer() {
         return $this->belongsTo(Singer::class);
     }
+
+    public function genre() {
+        return $this->belongsTo(Genre::class);
+    }
 }
