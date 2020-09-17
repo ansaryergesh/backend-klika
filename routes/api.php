@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('categories', 'Api\CategoryController@index');
-Route::get('categories/{category}', 'Api\CategoryController@show');
+Route::get('singers', 'Api\SingerController@index');
+Route::get('singers/{singer}', 'Api\SingerController@show');
 
-Route::get('products', 'Api\ProductController@index');
+Route::get('musics', 'Api\MusicController@index');
