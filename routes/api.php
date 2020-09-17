@@ -21,5 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('singers', 'Api\SingerController@index');
 Route::get('singers/{id}', 'Api\SingerController@getSinger');
 Route::post('singers', 'Api\SingerController@createSinger');
-Route::put('singer/{id}', 'Api\SingerController@updateSinger');
-Route::delete('singer/{id}', 'Api\SingerController@deleteSinger');
+Route::put('singers/{id}', 'Api\SingerController@updateSinger');
+Route::delete('singers/{id}', 'Api\SingerController@deleteSinger');
+
+Route::get('genres', 'Api\GenreController@index');
+Route::get('genres/{id}', 'Api\GenreController@getGenre');
+Route::post('genres', 'Api\GenreController@createGenre');
+Route::put('genres/{id}', 'Api\GenreController@updateGenre');
+Route::delete('genres/{id}', 'Api\GenreController@deleteGenre');
