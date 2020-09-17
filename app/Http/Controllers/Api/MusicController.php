@@ -4,12 +4,18 @@ namespace App\Http\Controllers\Api;
 
 use App\Music;
 use App\Http\Controllers\Controller;
+use DB;
 use Illuminate\Http\Request;
 
 class MusicController extends Controller
 {
     public function index() {
-        $musics = Music::with('singer', 'genre')->get()->toJson(JSON_PRETTY_PRINT);
+        $musics = DB::table('music')
+        ->join('singers', 'singers.id', '=', 'music.singer_id')
+        ->join('genres', 'genres.id', '=', 'music.genre_id')
+        ->select('music.name','year', 'genres.name AS genre_name', 'singers.name AS singer_name')->get()
+        ->toJson(JSON_PRETTY_PRINT);;
+
         return response($musics, 200);;
     }
 
