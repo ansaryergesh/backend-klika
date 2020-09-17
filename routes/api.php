@@ -19,6 +19,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('singers', 'Api\SingerController@index');
-Route::get('singers/{singer}', 'Api\SingerController@show');
-
-Route::get('musics', 'Api\MusicController@index');
