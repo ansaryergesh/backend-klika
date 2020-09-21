@@ -31,4 +31,11 @@ Route::put('genres/{id}', 'Api\GenreController@updateGenre');
 Route::delete('genres/{id}', 'Api\GenreController@deleteGenre');
 
 Route::get('musics', 'Api\MusicController@index');
+Route::get('musics/{count}', 'Api\MusicController@perpage');
 Route::post('musics', 'Api\MusicController@createMusic');
+
+// Route::get('user/{id}/{name}', function($id, $name){//})->where(array('id' => '[0-9]+', 'name' => '[a-z]+'))
+
+// Route::filter('age', function($route, $request, $value){
+
+// });
